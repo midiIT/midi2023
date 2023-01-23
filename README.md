@@ -17,11 +17,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-# Requirements
-
-* Node 18.13
-* NPM 9.3
-
 # NAUDINGOS NUORODOS
 
 ## Tailwind dokumentacija
