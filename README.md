@@ -1,9 +1,6 @@
-beep test
-
 ## Getting Started
 
 First, install the dependencies:
-
 ```bash
 npm install
 ```
@@ -23,25 +20,23 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 # NAUDINGOS NUORODOS
 
 ## Tailwind dokumentacija
-
 https://tailwindcss.com/docs/installation
 
 ## Next.js dokumentacija
-
 https://nextjs.org/docs/getting-started
 
 ## Github
-
 https://github.com/midiIT/midi2023
 
 # NAUDINGAS SOFTWARE
 
 ## Visual Studio Code
-
 https://code.visualstudio.com/
 https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
 https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
 ## GitKraken
-
 https://www.gitkraken.com/
+
+
+
