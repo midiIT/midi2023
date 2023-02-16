@@ -8,17 +8,16 @@ import {
   PresentationChartLineIcon,
 } from "@heroicons/react/24/outline";
 import Navigationbuttons from "../components/NavigationButtons";
-import { DocumentPlusIcon } from "@heroicons/react/24/solid";
 
 const sections: string[] = ["events", "team", "sponsors", "articles"];
 
 export default function Carousel() {
   const [emblaRef, embla] = useEmblaCarousel({
     align: "start",
-    breakpoints: { "(min-width: 640px)": { active: false } },
+    breakpoints: { "(min-width: 768px)": { active: false } },
     axis: "x",
     loop: true,
-    skipSnaps: false,
+    skipSnaps: true,
     inViewThreshold: 0.7,
   });
 
@@ -79,18 +78,26 @@ export default function Carousel() {
   }, [selectedIndex]);
 
   return (
-    <div className="w-full bg-slate-400 py-4 px-8 sm:inline-grid sm:h-screen sm:w-1/4 md:w-48">
-      <div className="overflow-hidden sm:overflow-y-hidden" ref={emblaRef}>
-        <div className="flex flex-row sm:h-full sm:flex-col sm:justify-evenly sm:gap-12">
-          <div className="mx-4 flex w-full flex-none flex-col items-center sm:mx-0">
+    <div className="w-full bg-slate-800 py-4 px-8 md:inline-grid md:h-screen md:w-48">
+      <Image
+        alt="MIDI logotipas"
+        src="/MIDIlogo.webp"
+        height="1250"
+        width="1250"
+        priority
+        className="m-auto h-24 w-auto md:-ml-2 md:h-auto"
+      ></Image>
+      <div className="overflow-hidden md:overflow-y-hidden" ref={emblaRef}>
+        <div className="flex flex-row md:h-full md:flex-col md:justify-evenly md:gap-12">
+          <div className="mx-4 flex w-full flex-none flex-col items-center md:mx-0">
             <div
               onClick={() => {
                 setSelectedIndex([0]);
               }}
               className="slide-container z-10 flex cursor-pointer flex-col items-center justify-between"
             >
-              <CalendarDaysIcon className="h-32 text-white sm:h-24"></CalendarDaysIcon>
-              <h2 className="my-4 text-center text-4xl text-white sm:text-2xl">
+              <CalendarDaysIcon className="h-32 text-white md:h-24"></CalendarDaysIcon>
+              <h2 className="my-4 text-center text-4xl text-white md:text-2xl">
                 Renginiai
               </h2>
             </div>
@@ -103,13 +110,13 @@ export default function Carousel() {
               scrollPrev={scrollPrev}
             />
           </div>
-          <div className="mx-4 flex w-full flex-none flex-col items-center sm:mx-0">
+          <div className="mx-4 flex w-full flex-none flex-col items-center md:mx-0">
             <div
               onClick={() => setSelectedIndex([1])}
               className="slide-container z-10 flex cursor-pointer flex-col items-center justify-between"
             >
-              <WrenchScrewdriverIcon className="h-32 text-gray-300 sm:h-24"></WrenchScrewdriverIcon>
-              <h2 className="my-4 text-center text-4xl text-white sm:text-2xl">
+              <WrenchScrewdriverIcon className="h-32 text-gray-300 md:h-24"></WrenchScrewdriverIcon>
+              <h2 className="my-4 text-center text-4xl text-white md:text-2xl">
                 Komanda
               </h2>
             </div>
@@ -118,13 +125,13 @@ export default function Carousel() {
               scrollPrev={scrollPrev}
             />
           </div>
-          <div className="mx-4 flex w-full flex-none flex-col items-center sm:mx-0">
+          <div className="mx-4 flex w-full flex-none flex-col items-center md:mx-0">
             <div
               onClick={() => setSelectedIndex([2])}
               className="slide-container z-10 flex cursor-pointer flex-col items-center justify-between"
             >
-              <HeartIcon className="h-32 text-red-700 sm:h-24"></HeartIcon>
-              <h2 className="my-4 text-center text-4xl text-white sm:text-2xl">
+              <HeartIcon className="h-32 text-red-700 md:h-24"></HeartIcon>
+              <h2 className="my-4 text-center text-4xl text-white md:text-2xl">
                 Rėmėjai
               </h2>
             </div>
@@ -133,13 +140,13 @@ export default function Carousel() {
               scrollPrev={scrollPrev}
             />
           </div>
-          <div className="mx-4 flex w-full flex-none flex-col items-center sm:mx-0">
+          <div className="mx-4 flex w-full flex-none flex-col items-center md:mx-0">
             <div
               onClick={() => setSelectedIndex([3])}
               className="slide-container z-10 flex cursor-pointer flex-col items-center justify-between"
             >
-              <PresentationChartLineIcon className="h-32 text-white sm:h-24"></PresentationChartLineIcon>
-              <h2 className="my-4 text-center text-4xl text-white sm:text-2xl">
+              <PresentationChartLineIcon className="h-32 text-white md:h-24"></PresentationChartLineIcon>
+              <h2 className="my-4 text-center text-4xl text-white md:text-2xl">
                 Rėmėjų straipsniai
               </h2>
             </div>
@@ -151,7 +158,7 @@ export default function Carousel() {
         </div>
       </div>
       {
-        <div className="mt-2 flex justify-center space-x-2 sm:hidden">
+        <div className="mt-2 flex justify-center space-x-2 md:hidden">
           {scrollSnaps.map((_, idx) => (
             <button
               className={`h-2 w-6 rounded-sm ${

@@ -11,7 +11,7 @@ export default function Avatar({
   scrollNext: () => void;
 }) {
   return (
-    <div className="absolute bottom-2/4 flex w-full justify-between sm:hidden">
+    <div className="absolute bottom-2/4 flex w-full justify-between md:hidden">
       <button
         className="relative mx-2 rounded-full border border-slate-800 bg-slate-800"
         type="button"
