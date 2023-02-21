@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Avatar from "../components/Avatar";
 import Carousel from "../components/Carousel";
+import ArticleSection from "../components/sections/articleSection";
 import EventsSection from "../components/sections/eventsSection";
 
 export default function Index() {
@@ -36,7 +37,11 @@ export default function Index() {
           id="articles"
           className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
         >
-          MNP
+          <div className="grid grid-cols1 md:grid-cols-2 lg:grid-cols-3">
+            <ArticleSection name="Test"/>
+            <ArticleSection name="VU SA MIF"/>
+            <ArticleSection name="MIDI 2023 WOOHOOO"/>
+          </div>
         </section>
       </div>
     </>
