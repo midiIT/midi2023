@@ -3,6 +3,7 @@ import Avatar from "../components/Avatar";
 import Carousel from "../components/Carousel";
 import ArticleSection from "../components/sections/articleSection";
 import EventsSection from "../components/sections/eventsSection";
+import ViewPDF from "../components/ViewPDF";
 
 export default function Index() {
   return (
@@ -38,9 +39,16 @@ export default function Index() {
           className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
         >
           <div className="grid grid-cols1 md:grid-cols-2 lg:grid-cols-3">
-            <ArticleSection name="Test"/>
-            <ArticleSection name="VU SA MIF"/>
-            <ArticleSection name="MIDI 2023 WOOHOOO"/>
+            <ViewPDF/>
+            {/* <ArticleSection name="Test" pdfLocation="/pdf/test.pdf"/>
+            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf"/>
+            <ArticleSection name="MIDI 2023 WOOHOOO" pdfLocation="/pdf/test.pdf"/>
+            <ArticleSection name="Test" pdfLocation="/pdf/test.pdf"/>
+            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf"/>
+            <ArticleSection name="MIDI 2023 WOOHOOO" pdfLocation="/pdf/test.pdf"/>
+            <ArticleSection name="Test" pdfLocation="/pdf/test.pdf"/>
+            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf"/>
+            <ArticleSection name="MIDI 2023 WOOHOOO" pdfLocation="/pdf/test.pdf"/> */}
           </div>
         </section>
       </div>
