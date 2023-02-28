@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Modal } from "react-overlays";
+import { createPortal } from 'react-dom';
+// import { Modal } from "react-overlays";
 import dynamic from "next/dynamic";
 const ViewPDF = dynamic(() => import("../ViewPDF"), {
   ssr: false,
@@ -9,9 +10,11 @@ export default function ArticleSection(props: {
   name: string;
   pdfLocation: string;
 }) {
+  
   const [show, setShow] = useState(false);
-  const renderBackdrop = (props: any) => <div {...props} className="backdrop" />;
-  var handleClose = () => setShow(false);
+  // const renderBackdrop = (props: any) => <div {...props} className="opacity-50" />;
+  // var handleClose = () => setShow(false);
+
   return (
     <div className="flex flex-col text-xl sm:text-2xl md:text-2xl lg:text-3xl">
       <button
@@ -25,17 +28,14 @@ export default function ArticleSection(props: {
         />
         <span>{props.name}</span>
       </button>
-      <Modal className="modal"
-      show={show}
-      onHide={handleClose}
-      renderBackdrop={renderBackdrop}>
-        <div>
-          <ViewPDF pdfLocation={props.pdfLocation}/>
-        </div>
-      </Modal>
+    {show && createPortal(
+      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50">
+        <button onClick={() => setShow(false)}>Close</button>
+        <ViewPDF pdfLocation={props.pdfLocation} />
+      </div>,
+      document.body
+    )}
     </div>
-    
   );
 }
-
 // onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => viewPDF()
