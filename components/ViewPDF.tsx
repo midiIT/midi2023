@@ -21,14 +21,14 @@ export default function ViewPDF(props: { pdfLocation: string}) {
 //   console.log(width, height)
 
   return (
-      <div className="flex flex-col items-center w-screen z-10">
+      <div className="flex flex-col items-center w-screen z-10 mt-6">
         <Document className="flex flex-col items-center"
           file={file}
           onLoadSuccess={onDocumentLoadSuccess}
           options={options}
         >
             <div onClick={e => {e.stopPropagation();}}>
-                <Page pageNumber={1} scale={0.9} /> {/* add scaling mathheight={size.height*0.52} width={size.width*0.5} */}
+                <Page pageNumber={1} scale={size.height*0.001}/> {/* add scaling math height={size.height*0.52} width={size.width*0.5} */}
           {/* {Array.from(new Array(numPages), (el, index) => (
             <Page key={`page_${index + 1}`} pageNumber={index + 1} />
           ))} */}
