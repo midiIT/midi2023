@@ -30,8 +30,10 @@ export default function ArticleSection(props: {
       </button>
     {show && createPortal(
       <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50">
-        <button onClick={() => setShow(false)}>Close</button>
+        {/* <button onClick={() => setShow(false)}>Close</button> */}
+        <div onClick={() => setShow(false)}>
         <ViewPDF pdfLocation={props.pdfLocation} />
+        </div>
       </div>,
       document.body
     )}
