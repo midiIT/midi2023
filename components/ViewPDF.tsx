@@ -21,7 +21,7 @@ export default function ViewPDF(props: { pdfLocation: string}) {
 //   console.log(width, height)
 
   return (
-      <div className="flex flex-col items-center w-screen z-10 mt-6">
+      <div className="flex flex-col items-center w-screen z-10 mt-[5%]">
         <Document className="flex flex-col items-center"
           file={file}
           onLoadSuccess={onDocumentLoadSuccess}
