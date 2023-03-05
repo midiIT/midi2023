@@ -24,32 +24,42 @@ export default function Index() {
         </section>
         <section
           id="team"
-          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
-        >
-          <Avatar name="it me" title="yes" imgsrc="/media/Gustas.webp"></Avatar>
-        </section>
+          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+        ></section>
         <section
           id="sponsors"
-          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
-        >
-          <Avatar name="=)" title="lol" imgsrc="/media/Gustas.webp"></Avatar>
-        </section>
+          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+        ></section>
         <section
           id="articles"
-          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
         >
-          <div className="grid grid-cols1 md:grid-cols-2 lg:grid-cols-3">
-            {/* <ViewPDF/> */}
-            <ArticleSection name="Test" pdfLocation="/pdf/placeholder1.pdf"/>
-            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/placeholder2.pdf"/>
-            <ArticleSection name="MIDI 2023 WOOHOOO" pdfLocation="/pdf/placeholder3.pdf"/>
-            <ArticleSection name="Test" pdfLocation="/pdf/test.pdf"/>
-            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf"/>
-            <ArticleSection name="MIDI 2023 WOOHOOO" pdfLocation="/pdf/test.pdf"/>
-            <ArticleSection name="Test" pdfLocation="/pdf/test.pdf"/>
-            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf"/>
-            <ArticleSection name="MIDI 2023 WOOHOOO" pdfLocation="/pdf/test.pdf"/>
-            <ArticleSection name="Multiple pages" pdfLocation="/pdf/multipage.pdf"/>
+          <div className="grid-cols1 grid md:grid-cols-2 lg:grid-cols-3">
+            <ArticleSection name="Test" pdfLocation="/pdf/placeholder1.pdf" />
+            <ArticleSection
+              name="VU SA MIF"
+              pdfLocation="/pdf/placeholder2.pdf"
+            />
+            <ArticleSection
+              name="MIDI 2023 WOOHOOO"
+              pdfLocation="/pdf/placeholder3.pdf"
+            />
+            <ArticleSection name="Test" pdfLocation="/pdf/test.pdf" />
+            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf" />
+            <ArticleSection
+              name="MIDI 2023 WOOHOOO"
+              pdfLocation="/pdf/test.pdf"
+            />
+            <ArticleSection name="Test" pdfLocation="/pdf/test.pdf" />
+            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf" />
+            <ArticleSection
+              name="MIDI 2023 WOOHOOO"
+              pdfLocation="/pdf/test.pdf"
+            />
+            <ArticleSection
+              name="Multiple pages"
+              pdfLocation="/pdf/multipage.pdf"
+            />
           </div>
         </section>
       </div>

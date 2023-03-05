@@ -18,6 +18,7 @@ export default function Carousel() {
     axis: "x",
     loop: true,
     skipSnaps: true,
+    speed: 20,
     inViewThreshold: 0.7,
   });
 
@@ -78,14 +79,14 @@ export default function Carousel() {
   }, [selectedIndex]);
 
   return (
-    <div className="w-full bg-slate-800 py-4 px-8 md:inline-grid md:h-screen md:w-48">
+    <div className="w-full bg-slate-800 py-4 px-8 md:inline-grid md:w-48">
       <Image
         alt="MIDI logotipas"
         src="/MIDIlogo.webp"
         height="1250"
         width="1250"
         priority
-        className="m-auto h-24 w-auto md:-ml-2 md:h-auto"
+        className="m-auto mb-10 h-24 w-auto md:mr-0 md:-ml-2 md:mt-0 md:h-auto"
       ></Image>
       <div className="overflow-hidden md:overflow-y-hidden" ref={emblaRef}>
         <div className="flex flex-row md:h-full md:flex-col md:justify-evenly md:gap-12">
