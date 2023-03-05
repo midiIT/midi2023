@@ -7,13 +7,13 @@ const options = {
   cMapUrl: "cmaps/",
   cMapPacked: true,
 };
-// merge conflict test
+
 export default function ViewPDF(props: { pdfLocation: string }) {
   const [file, setFile] = useState(props.pdfLocation);
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   // console.log('test');
-
+  // merge conflict test
   //   function onDocumentLoadSuccess({ numPages: nextNumPages }: any) {
   //     setNumPages(nextNumPages);
   //   }
@@ -86,7 +86,7 @@ export default function ViewPDF(props: { pdfLocation: string }) {
           {/* <Page pageNumber={1} scale={size.height*0.001}/> add scaling math height={size.height*0.52} width={size.width*0.5} */}
           {Array.from(new Array(numPages), (el, index) => (
             <Page
-              scale={size.width * 0.002}
+              scale={size.width * 0.001}
               renderAnnotationLayer={false}
               renderTextLayer={false}
               key={`page_${index + 1}`}
