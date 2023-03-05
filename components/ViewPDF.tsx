@@ -86,7 +86,7 @@ export default function ViewPDF(props: { pdfLocation: string }) {
           {/* <Page pageNumber={1} scale={size.height*0.001}/> add scaling math height={size.height*0.52} width={size.width*0.5} */}
           {Array.from(new Array(numPages), (el, index) => (
             <Page
-              scale={size.width * 0.001}
+              scale={size.width * 0.002}
               renderAnnotationLayer={false}
               renderTextLayer={false}
               key={`page_${index + 1}`}
