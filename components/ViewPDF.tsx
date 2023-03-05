@@ -8,66 +8,128 @@ const options = {
   cMapPacked: true,
 };
 
-export default function ViewPDF(props: { pdfLocation: string}) {
+export default function ViewPDF(props: { pdfLocation: string }) {
   const [file, setFile] = useState(props.pdfLocation);
   const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
   // console.log('test');
-  function onDocumentLoadSuccess({ numPages: nextNumPages }: any) {
-    setNumPages(nextNumPages);
-  }
+
+  //   function onDocumentLoadSuccess({ numPages: nextNumPages }: any) {
+  //     setNumPages(nextNumPages);
+  //   }
   const size = useWindowSize();
-//   const width = window.innerWidth;
-//   const height = window.innerHeight;
-//   console.log(width, height)
+
+  function onDocumentLoadSuccess({ numPages }: any) {
+    setNumPages(numPages);
+    setPageNumber(1);
+  }
+
+  function changePage(offset: number) {
+    setPageNumber((prevPageNumber) => prevPageNumber + offset);
+  }
+
+  function previousPage() {
+    changePage(-1);
+  }
+
+  function nextPage() {
+    changePage(1);
+  }
+
+  // return (
+  //   <div className="flex flex-col items-center w-screen z-10 mt-[5%] overflow-scroll">
+  //     <Document
+  //       file={props.pdfLocation}
+  //       onLoadSuccess={onDocumentLoadSuccess}
+  //     >
+  //       <div onClick={e => {e.stopPropagation();}}>
+  //       <Page pageNumber={pageNumber} renderAnnotationLayer={false} renderTextLayer={false}/>
+  //       </div>
+  //     </Document>
+  //     <div onClick={e => {e.stopPropagation();}}>
+  //       <p className="text-white">
+  //         Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
+  //       </p>
+  //       <button
+  //         className="text-white"
+  //         type="button"
+  //         disabled={pageNumber <= 1}
+  //         onClick={previousPage}
+  //       >
+  //         Previous
+  //       </button>
+  //       <button
+  //         className="text-white"
+  //         type="button"
+  //         disabled={pageNumber >= numPages}
+  //         onClick={nextPage}
+  //       >
+  //         Next
+  //       </button>
+  //     </div>
+  //   </div>
+  // );
 
   return (
-      <div className="flex flex-col items-center w-screen z-10 mt-[5%]">
-        <Document className="flex flex-col items-center"
-          file={file}
-          onLoadSuccess={onDocumentLoadSuccess}
-          options={options}
+    <div className="fixed top-0 bottom-0 z-10 pt-[5%] pb-[5%] flex w-screen flex-col items-center overflow-y-scroll">
+      <Document
+        className="flex flex-col items-center"
+        file={file}
+        onLoadSuccess={onDocumentLoadSuccess}
+        options={options}
+      >
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
         >
-            <div onClick={e => {e.stopPropagation();}}>
-                <Page pageNumber={1} scale={size.height*0.001}/> {/* add scaling math height={size.height*0.52} width={size.width*0.5} */}
-          {/* {Array.from(new Array(numPages), (el, index) => (
-            <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-          ))} */}
-          </div>
-        </Document>
-       </div>
+          {/* <Page pageNumber={1} scale={size.height*0.001}/> add scaling math height={size.height*0.52} width={size.width*0.5} */}
+          {Array.from(new Array(numPages), (el, index) => (
+            <Page
+              scale={size.width * 0.001}
+              renderAnnotationLayer={false}
+              renderTextLayer={false}
+              key={`page_${index + 1}`}
+              pageNumber={index + 1}
+            />
+          ))}
+        </div>
+      </Document>
+      <div></div>
+    </div>
   );
 }
 
 function useWindowSize() {
-    // Initialize state with undefined width/height so server and client renders match
-    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-    const [windowSize, setWindowSize] = useState({
-      width: 0,
-      height: 0,
-    });
-  
-    useEffect(() => {
-      // only execute all the code below in client side
-      // Handler to call on window resize
-      function handleResize() {
-        // Set window width/height to state
-        setWindowSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-      }
-      
-      // Add event listener
-      window.addEventListener("resize", handleResize);
-       
-      // Call handler right away so state gets updated with initial window size
-      handleResize();
-      
-      // Remove event listener on cleanup
-      return () => window.removeEventListener("resize", handleResize);
-    }, []); // Empty array ensures that effect is only run on mount
-    return windowSize;
-  }
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
 // #ResumeContainer {
 //     margin:auto;
 //     width: 65%;
