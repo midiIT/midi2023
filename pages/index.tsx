@@ -50,6 +50,7 @@ export default function Index() {
             <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf"/>
             <ArticleSection name="MIDI 2023 WOOHOOO" pdfLocation="/pdf/test.pdf"/>
             <ArticleSection name="Multiple pages" pdfLocation="/pdf/multipage.pdf"/>
+            <ArticleSection name="bapdf" pdfLocation="/pdf/ba.pdf"/>
           </div>
         </section>
       </div>
