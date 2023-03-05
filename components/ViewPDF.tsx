@@ -7,7 +7,7 @@ const options = {
   cMapUrl: "cmaps/",
   cMapPacked: true,
 };
-
+// merge conflict test
 export default function ViewPDF(props: { pdfLocation: string }) {
   const [file, setFile] = useState(props.pdfLocation);
   const [numPages, setNumPages] = useState(null);
@@ -71,7 +71,7 @@ export default function ViewPDF(props: { pdfLocation: string }) {
   // );
 
   return (
-    <div className="fixed top-0 bottom-0 z-10 pt-[5%] pb-[5%] flex w-screen flex-col items-center overflow-y-scroll">
+    <div className="fixed top-0 bottom-0 z-10 flex w-screen flex-col items-center overflow-y-scroll pt-[5%] pb-[5%]">
       <Document
         className="flex flex-col items-center"
         file={file}

@@ -24,19 +24,15 @@ export default function Index() {
         </section>
         <section
           id="team"
-          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
-        >
-          <Avatar name="it me" title="yes" imgsrc="/media/Gustas.webp"></Avatar>
-        </section>
+          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+        ></section>
         <section
           id="sponsors"
-          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
-        >
-          <Avatar name="=)" title="lol" imgsrc="/media/Gustas.webp"></Avatar>
-        </section>
+          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+        ></section>
         <section
           id="articles"
-          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
         >
           <div className="grid grid-cols1 md:grid-cols-2 lg:grid-cols-3">
             {/* <ViewPDF/> */}
