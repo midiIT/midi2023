@@ -12,11 +12,6 @@ export default function ViewPDF(props: { pdfLocation: string }) {
   const [file, setFile] = useState(props.pdfLocation);
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  // console.log('test');
-  // merge conflict test
-  //   function onDocumentLoadSuccess({ numPages: nextNumPages }: any) {
-  //     setNumPages(nextNumPages);
-  //   }
   const size = useWindowSize();
 
   function onDocumentLoadSuccess({ numPages }: any) {
@@ -35,7 +30,7 @@ export default function ViewPDF(props: { pdfLocation: string }) {
   function nextPage() {
     changePage(1);
   }
-
+  // merge conflict
   // return (
   //   <div className="flex flex-col items-center w-screen z-10 mt-[5%] overflow-scroll">
   //     <Document
@@ -69,7 +64,7 @@ export default function ViewPDF(props: { pdfLocation: string }) {
   //     </div>
   //   </div>
   // );
-
+  // on another
   return (
     <div className="fixed top-0 bottom-0 z-10 flex w-screen flex-col items-center overflow-y-scroll pt-[5%] pb-[5%]">
       <Document
