@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { render } from "react-dom";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -88,7 +89,7 @@ export default function ViewPDF(props: { pdfLocation: string }) {
             <Page
               scale={size.width * 0.001}
               renderAnnotationLayer={false}
-              renderTextLayer={false}
+              renderTextLayer={true}
               key={`page_${index + 1}`}
               pageNumber={index + 1}
             />
