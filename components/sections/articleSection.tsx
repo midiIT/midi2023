@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
-// import { Modal } from "react-overlays";
 import dynamic from "next/dynamic";
 const ViewPDF = dynamic(() => import("../ViewPDF"), {
   ssr: false,
