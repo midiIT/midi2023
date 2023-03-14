@@ -17,6 +17,7 @@ export default function ArticleSection(props: {
   return (
     <div className="flex flex-col text-xl sm:text-2xl md:text-2xl lg:text-3xl">
       <button
+        // className="glow-on-hover"
         className="flex items-center space-x-4 text-left"
         onClick={() => setShow(true)}
       >
