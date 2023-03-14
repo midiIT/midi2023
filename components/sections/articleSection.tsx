@@ -17,8 +17,10 @@ export default function ArticleSection(props: {
   return (
     <div className="flex flex-col text-xl sm:text-2xl md:text-2xl lg:text-3xl">
       <button
-        // className="glow-on-hover"
-        className="flex items-center space-x-4 text-left"
+        // className="material-bubble"
+        className="flex items-center space-x-4 text-left transition duration-300 ease-in-out 
+        hover:bg-slate-800 hover:shadow-lg dark:hover:shadow-black/30
+        active:translate-y-1 active:duration-100 active:shadow-none"
         onClick={() => setShow(true)}
       >
         <img
