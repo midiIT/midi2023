@@ -37,7 +37,7 @@ export default function ViewPDF(props: { pdfLocation: string }) {
   function nextPage() {
     changePage(1);
   }
-
+  // PDF with next and previous buttons
   // return (
   //   <div className="flex flex-col items-center w-screen z-10 mt-[5%] overflow-scroll">
   //     <Document
@@ -71,7 +71,7 @@ export default function ViewPDF(props: { pdfLocation: string }) {
   //     </div>
   //   </div>
   // );
-
+  // Continuous PDF
   return (
     <div className="fixed top-0 bottom-0 z-10 pt-[5%] pb-[5%] flex w-screen flex-col items-center overflow-y-scroll">
       <Document
@@ -104,8 +104,6 @@ export default function ViewPDF(props: { pdfLocation: string }) {
 }
 
 function useWindowSize() {
-  // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,
