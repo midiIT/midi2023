@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import 'react-pdf/dist/esm/Page/TextLayer.css';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import "react-pdf/dist/esm/Page/TextLayer.css";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { render } from "react-dom";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -73,12 +73,59 @@ export default function ViewPDF(props: { pdfLocation: string }) {
   // );
   // Continuous PDF
   return (
-    <div className="fixed top-0 bottom-0 z-10 pt-[5%] pb-[5%] flex w-screen flex-col items-center overflow-y-scroll">
+    <div className="fixed top-0 bottom-0 z-10 flex w-screen flex-col items-center overflow-y-scroll pt-[5%] pb-[5%]">
       <Document
         className="flex flex-col items-center"
         file={file}
         onLoadSuccess={onDocumentLoadSuccess}
         options={options}
+        error={
+            <div className="flex justify-center items-center h-screen">
+              <svg
+                className="m-auto h-32 w-32 animate-spin text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+            </div>}
+        loading={
+          <div className="flex justify-center items-center h-screen">
+            <svg
+              className="h-32 w-32 animate-spin text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          </div>
+        }
       >
         <div
           onClick={(e) => {
