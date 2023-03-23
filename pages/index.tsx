@@ -20,7 +20,7 @@ export default function Index() {
           id="events"
           className="h-screen w-full px-4 pt-4 text-white transition-opacity duration-500"
         >
-          <EventsSection events={[]} />
+          <EventsSection />
         </section>
         <section
           id="team"
