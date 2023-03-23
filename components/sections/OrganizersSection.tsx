@@ -12,7 +12,7 @@ export default function OrganizersSection()
             <Avatar className="basis-full md:basis-1/4" name="Gustas Štaševskis" title="Informacinių technologijų vadovas" imgsrc="/media/foto-15.jpg" phone="+370 62 466 600" email="it@midi.lt" />
             <Avatar className="basis-full md:basis-1/4" name="Rasa Škiudaitė" title="Marketingo vadovė" imgsrc="/media/foto-9.jpg" phone="+370 67 877 453" email="marketingas@midi.lt" />
             <Avatar className="basis-full md:basis-1/4" name="Liudas Norkevičius" title="Barterinių remėjų vadovas" imgsrc="/media/foto-14.jpg" phone="+370 62 456 084" email="reklama@midi.lt" />
-            <Avatar className="basis-full md:basis-1/4" name="Austėja Bendikaitė" title="Administratorė" imgsrc="/media/foto-1.jpg" phone="+370 63 868858" email="admin@midi.lt" />
+            <Avatar className="basis-full md:basis-1/4" name="Austėja Bendikaitė" title="Administratorė" imgsrc="/media/foto-1.jpg" phone="+370 63 868 858" email="admin@midi.lt" />
             </div>
             <p className="text-center text-6xl my-8">MIDI Renginių vadovai</p><div className="flex flex-wrap gap-8 justify-center">
             <Avatar className="basis-full md:basis-1/4" name="Mantas Mažvila" title="Sportinio pokerio vadovas" imgsrc="/media/foto-8.jpg" phone="+370 68 584 390" email="pokeris@midi.lt" />
