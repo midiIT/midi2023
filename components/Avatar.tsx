@@ -17,7 +17,7 @@ export default function Avatar(props: {
     >
       <Image
         priority={props.priority}
-        className="h-48 w-48 rounded-full object-cover"
+        className="min-w-48 min-h-48 h-48 w-48 rounded-full object-cover"
         width="1500"
         height="1500"
         src={`${props.imgsrc}`}
