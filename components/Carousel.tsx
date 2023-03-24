@@ -79,7 +79,7 @@ export default function Carousel() {
   }, [selectedIndex]);
 
   return (
-    <div className="w-full bg-gradient-to-b from-slate-800 to-slate-700/80 py-4 px-8 md:inline-grid md:w-48">
+    <div className="w-full bg-gradient-to-b from-slate-800 to-slate-700/80 py-4 px-8 md:fixed md:inline-grid md:h-screen md:w-48">
       <Image
         alt="MIDI logotipas"
         src="/MIDIlogo.webp"
