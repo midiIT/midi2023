@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Dosis"
+          href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
         />
       </Head>
       <body className="bg-slate-900">
