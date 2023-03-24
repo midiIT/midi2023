@@ -4,6 +4,7 @@ import Carousel from "../components/Carousel";
 import ArticleSection from "../components/sections/articleSection";
 import EventsSection from "../components/sections/eventsSection";
 import ViewPDF from "../components/ViewPDF";
+import OrganizersSection from "../components/sections/OrganizersSection";
 
 export default function Index() {
   return (
@@ -15,6 +16,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col md:flex-row">
+        <div className="md:my-4 md:mx-4 md:h-full md:w-48">gggg</div>
         <Carousel></Carousel>
         <section
           id="events"
@@ -24,11 +26,13 @@ export default function Index() {
         </section>
         <section
           id="team"
-          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
-        ></section>
+          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+        >
+          <OrganizersSection />
+        </section>
         <section
           id="sponsors"
-          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
         ></section>
         <section
           id="articles"
