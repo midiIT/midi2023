@@ -5,8 +5,6 @@ import ArticleSection from "../components/sections/articleSection";
 import EventsSection from "../components/sections/eventsSection";
 import ViewPDF from "../components/ViewPDF";
 import OrganizersSection from "../components/sections/OrganizersSection";
-import Gabija from "../public/media/Gabija.webp";
-import Image from "next/image";
 
 export default function Index() {
   return (
