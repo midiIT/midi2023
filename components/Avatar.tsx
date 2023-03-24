@@ -1,13 +1,15 @@
 import Image from "next/image";
+import { StaticImageData } from "next/image";
 
 export default function Avatar(props: {
   name: string;
   title: string;
-  imgsrc: string;
+  imgsrc: StaticImageData;
   email: string;
   phone: string;
   className?: string;
   priority?: boolean;
+  placeholder?: any;
 }) {
   return (
     <div
@@ -18,10 +20,9 @@ export default function Avatar(props: {
       <Image
         priority={props.priority}
         className="min-w-48 min-h-48 h-48 w-48 rounded-full object-cover"
-        width="1500"
-        height="1500"
-        src={`${props.imgsrc}`}
-        alt={`${props.name}`}
+        src={props.imgsrc}
+        alt={props.name}
+        placeholder={props.placeholder}
       ></Image>
       <p className="text-4xl">{props.name}</p>
       <p className="w-3/4 text-2xl ">{props.title}</p>

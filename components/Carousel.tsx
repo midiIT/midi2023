@@ -70,8 +70,10 @@ export default function Carousel() {
         } else {
           sel.classList.remove("hidden");
           window.setTimeout(function () {
-            sel.classList.remove("invisible");
-            sel.classList.remove("opacity-0");
+            if (sel) {
+              sel.classList.remove("invisible");
+              sel.classList.remove("opacity-0");
+            }
           }, 0);
         }
       }

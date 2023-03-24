@@ -1,7 +1,7 @@
 export default function EventsSection() {
   return (
     <div>
-      <div>Any content you'd like goes here</div>
+      <div>Any content you&apos;d like goes here</div>
       <div>Perhaps maybe even have a spinner here...</div>
       <svg
         className="m-auto h-32 w-32 animate-spin text-white"
