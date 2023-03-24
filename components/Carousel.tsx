@@ -79,17 +79,20 @@ export default function Carousel() {
   }, [selectedIndex]);
 
   return (
-    <div className="w-full bg-gradient-to-b from-slate-800 to-slate-700/80 py-4 px-8 backdrop-blur-sm md:fixed md:inline-grid md:h-screen md:w-48">
+    <div className="z-50 w-full bg-gradient-to-b from-slate-800 to-slate-700/80 py-4 px-8 backdrop-blur-sm md:fixed md:inline-grid md:h-screen md:w-48">
       <Image
         alt="MIDI logotipas"
         src="/MIDIlogo.webp"
         height="1250"
         width="1250"
         priority
-        className="m-auto mb-10 h-24 w-auto md:mr-0 md:-ml-2 md:mt-0 md:h-auto"
+        className="m-auto h-48 w-auto pb-10 md:mr-0 md:-ml-2 md:mt-0 md:h-auto short:ml-1 short:h-36"
       ></Image>
-      <div className="overflow-hidden md:overflow-y-hidden" ref={emblaRef}>
-        <div className="flex flex-row md:h-full md:flex-col md:justify-evenly md:gap-12">
+      <div
+        className="overflow-hidden md:overflow-y-hidden short:overflow-y-auto"
+        ref={emblaRef}
+      >
+        <div className="flex flex-row md:h-full md:flex-col md:justify-evenly md:gap-12 short:gap-0">
           <div className="mx-4 flex w-full flex-none flex-col items-center md:mx-0">
             <div
               onClick={() => {
@@ -97,8 +100,8 @@ export default function Carousel() {
               }}
               className="slide-container z-10 flex cursor-pointer flex-col items-center justify-between"
             >
-              <CalendarDaysIcon className="h-32 text-white md:h-20"></CalendarDaysIcon>
-              <h2 className="my-4 text-center text-4xl text-white md:text-2xl">
+              <CalendarDaysIcon className="h-32 text-white md:h-20 short:h-14"></CalendarDaysIcon>
+              <h2 className="my-1 text-center text-4xl text-white md:text-2xl">
                 Renginiai
               </h2>
             </div>
@@ -116,8 +119,8 @@ export default function Carousel() {
               onClick={() => setSelectedIndex([1])}
               className="slide-container z-10 flex cursor-pointer flex-col items-center justify-between"
             >
-              <WrenchScrewdriverIcon className="h-32 text-gray-300 md:h-20"></WrenchScrewdriverIcon>
-              <h2 className="my-4 text-center text-4xl text-white md:text-2xl">
+              <WrenchScrewdriverIcon className="h-32 text-gray-300 md:h-20 short:h-14"></WrenchScrewdriverIcon>
+              <h2 className="my-1 text-center text-4xl text-white md:text-2xl">
                 Komanda
               </h2>
             </div>
@@ -131,8 +134,8 @@ export default function Carousel() {
               onClick={() => setSelectedIndex([2])}
               className="slide-container z-10 flex cursor-pointer flex-col items-center justify-between"
             >
-              <HeartIcon className="h-32 text-red-700 md:h-20"></HeartIcon>
-              <h2 className="my-4 text-center text-4xl text-white md:text-2xl">
+              <HeartIcon className="h-32 text-red-700 md:h-20 short:h-14"></HeartIcon>
+              <h2 className="my-1 text-center text-4xl text-white md:text-2xl">
                 Rėmėjai
               </h2>
             </div>
@@ -146,8 +149,8 @@ export default function Carousel() {
               onClick={() => setSelectedIndex([3])}
               className="slide-container z-10 flex cursor-pointer flex-col items-center justify-between"
             >
-              <PresentationChartLineIcon className="h-32 text-white md:h-20"></PresentationChartLineIcon>
-              <h2 className="my-4 text-center text-4xl text-white md:text-2xl">
+              <PresentationChartLineIcon className="h-32 text-white md:h-20 short:h-14"></PresentationChartLineIcon>
+              <h2 className="my-1 text-center text-4xl text-white md:text-2xl">
                 Rėmėjų straipsniai
               </h2>
             </div>

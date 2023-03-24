@@ -15,6 +15,9 @@ module.exports = {
       colors: {
         midiblue: "#0075b5",
       },
+      screens: {
+        short: { raw: "(max-height: 900px) and (min-width: 768px)" },
+      },
     },
   },
   plugins: [],

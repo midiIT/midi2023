@@ -1,7 +1,7 @@
 import Avatar from "../Avatar";
 export default function OrganizersSection() {
   return (
-    <>
+    <div className="mb-4">
       <p className="my-8 text-center text-6xl">MIDI Vadovai</p>
       <div className="flex flex-wrap justify-center gap-8">
         <Avatar
@@ -215,6 +215,6 @@ export default function OrganizersSection() {
           email="stream@midi.lt"
         />
       </div>
-    </>
+    </div>
   );
 }
