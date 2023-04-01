@@ -5,6 +5,7 @@ import ArticleSection from "../components/sections/articleSection";
 import EventsSection from "../components/sections/eventsSection";
 import ViewPDF from "../components/ViewPDF";
 import OrganizersSection from "../components/sections/OrganizersSection";
+import SponsorsSection from "../components/sections/sponsorsSection";
 
 export default function Index() {
   return (
@@ -33,7 +34,9 @@ export default function Index() {
         <section
           id="sponsors"
           className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
-        ></section>
+        >
+          <SponsorsSection/>
+        </section>
         <section
           id="articles"
           className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
