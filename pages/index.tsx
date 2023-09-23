@@ -1,6 +1,11 @@
 import Head from "next/head";
 import Avatar from "../components/Avatar";
-import Navbar from "../components/Navbar";
+import Carousel from "../components/Carousel";
+import ArticleSection from "../components/sections/articleSection";
+import EventsSection from "../components/sections/eventsSection";
+import ViewPDF from "../components/ViewPDF";
+import OrganizersSection from "../components/sections/OrganizersSection";
+import SponsorsSection from "../components/sections/sponsorsSection";
 
 export default function Index() {
   return (
@@ -11,48 +16,60 @@ export default function Index() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar></Navbar>
-      <div id="start" className="h-screen bg-slate-900">
-        <div className="flex h-full flex-col items-center justify-center">
-          <p className="m-auto text-6xl text-midiblue md:text-8xl">MIDI 2023</p>
-        </div>
-      </div>
-      <div id="about" className="h-screen bg-gray-800">
-        <div className="flex h-full flex-col items-center justify-center">
-          <p className="m-auto text-6xl text-midiblue md:text-8xl">ABOUT</p>
-        </div>
-      </div>
-      <div id="events" className="h-screen bg-slate-900">
-        <div className="flex h-full flex-col items-center justify-center">
-          <p className="m-auto text-6xl text-midiblue md:text-8xl">EVENTS</p>
-        </div>
-      </div>
-      <div id="team" className="h-screen bg-gray-800 p-4">
-        <div className="flex h-full flex-col items-center justify-center">
-          <p className="mb-16 text-6xl text-midiblue md:text-8xl">TEAM</p>
-          <div className="grid grid-flow-col grid-rows-2 gap-16 text-white md:gap-8 lg:grid-rows-1">
-            <Avatar
-              name="Gustas"
-              title="IT koordinatorius"
-              imgsrc="/media/Gustas.webp"
-            ></Avatar>
-            <Avatar
-              name="Gustas"
-              title="IT kombinatorius"
-              imgsrc="/media/Gustas.webp"
-            ></Avatar>
-            <Avatar
-              name="Gustas"
-              title="IT rekombinatorius"
-              imgsrc="/media/Gustas.webp"
-            ></Avatar>
-            <Avatar
-              name="Gustas"
-              title="IT rekombinatorius"
-              imgsrc="/media/Gustas.webp"
-            ></Avatar>
+      <div className="flex flex-col md:flex-row">
+        <div className="md:my-4 md:mx-4 md:h-full md:w-48"></div>
+        <Carousel></Carousel>
+        <section
+          id="events"
+          className="h-screen w-full px-4 pt-4 text-white transition-opacity duration-500"
+        >
+          <EventsSection />
+        </section>
+        <section
+          id="team"
+          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+        >
+          <OrganizersSection />
+        </section>
+        <section
+          id="sponsors"
+          className="invisible hidden w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+        >
+          <SponsorsSection/>
+        </section>
+        <section
+          id="articles"
+          className="invisible hidden h-screen w-full bg-slate-900 px-4 pt-4 text-white opacity-0 transition-opacity duration-500"
+        >
+          <div className="grid-cols1 grid md:grid-cols-2 lg:grid-cols-3">
+            <ArticleSection name="Test" pdfLocation="/pdf/placeholder1.pdf" />
+            <ArticleSection
+              name="VU SA MIF"
+              pdfLocation="/pdf/placeholder2.pdf"
+            />
+            <ArticleSection
+              name="MIDI 2023 WOOHOOO"
+              pdfLocation="/pdf/placeholder3.pdf"
+            />
+            <ArticleSection name="Test" pdfLocation="/pdf/test.pdf" />
+            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf" />
+            <ArticleSection
+              name="MIDI 2023 WOOHOOO"
+              pdfLocation="/pdf/test.pdf"
+            />
+            <ArticleSection name="Test" pdfLocation="/pdf/test.pdf" />
+            <ArticleSection name="VU SA MIF" pdfLocation="/pdf/test.pdf" />
+            <ArticleSection
+              name="MIDI 2023 WOOHOOO"
+              pdfLocation="/pdf/test.pdf"
+            />
+            <ArticleSection
+              name="Multiple pages"
+              pdfLocation="/pdf/multipage.pdf"
+            />
+            <ArticleSection name="bapdf" pdfLocation="/pdf/ba.pdf" />
           </div>
-        </div>
+        </section>
       </div>
     </>
   );
